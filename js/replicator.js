@@ -1,0 +1,42 @@
+let header = document.getElementById('header');
+
+if (header) {
+  header.innerHTML = `
+  <nav class="site-nav" id="site-nav">
+    <div class="nav-left">
+      <a href="/index.html" class="nav-link nav-link--bold nav-link--active">HOMEPAGE</a>
+      <a href="info.html" class="nav-link">INFO</a>
+      <a href="work.html" class="nav-link">WORK</a>
+      <a href="contact.html" class="nav-link">CONTACT</a>
+    </div>
+    <div class="nav-center">
+      <a href="/index.html" class="nav-name-link">
+        <svg id="signature" width="83" height="28" viewBox="0 0 522 174" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path class="sig-path" d="M94.8186 36.7621C74.6843 66.5205 27.847 141.087 21.8919 163.524 14.448 191.57 15.0728 144.011 164.922 92.1314" stroke-width="6" stroke-linecap="round"/>
+      <path class="sig-path" d="M119.094 74.9761C118.847 76.8004 119.616 81.661 124.662 86.5087 130.969 92.5684 188.716 8.3274 226.068 2.0003" stroke-width="6" stroke-linecap="round"/>
+      <path class="sig-path" d="M210.322 39.4309C194.401 57.4489 162.516 89.1977 162.337 72.0486 162.113 50.6121 215.952 23.7928 204.022 57.9933 198.554 73.6686 242.589 19.2534 234.381 39.4309 199.076 99.5706 275.443 12.4099 273.436 21.1831 254.306 53.2232 272.798 62.0713 304.241 21.0516" stroke-width="6" stroke-linecap="round"/>
+      <path class="sig-path" d="M16.2722 82.7349C34.0371 73.441 61.7367 59.4351 89.7387 46.2027 122.661 30.6452 156.001 16.1568 174.106 11.6521" stroke-width="6" stroke-linecap="round"/>
+      <path class="sig-path" d="M2.0001 127.171C30.8896 104.032 105.853 60.6618 154.601 43.0933" stroke-width="6" stroke-linecap="round"/>
+      <path class="sig-path" d="M209.171 74.8024C193.008 99.1753 162.928 148.905 171.904 152.842 183.125 157.764 227.978 89.3537 234.381 92.2834 240.784 95.2132 210.993 143.171 224.326 147.413 237.659 151.655 337.712 2.7383 365.64 10.8972" stroke-width="6" stroke-linecap="round"/>
+      <path class="sig-path" d="M309.388 94.6391C293.75 101.678 264.201 119.434 271.101 134.144 275.749 144.053 296.964 122.769 309.558 107.589M309.558 107.589C315.661 100.233 319.74 94.3102 318.927 94.0661 318.236 93.5574 313.338 100.119 309.558 107.589ZC305.701 115.211 303.009 123.778 307.14 126.741 310.666 129.269 322.321 119.439 335.642 105.236M335.642 105.236C360.96 78.2416 392.292 35.4534 385.247 31.7082 377.3 27.4834 345.411 75.1365 335.642 105.236ZC332.195 115.858 331.502 124.293 335.587 127.492 341.138 131.838 354.346 120.927 368.769 104.84M368.769 104.84C395.04 75.537 425.34 29.0597 420.731 26.3341 415.012 22.9517 375.98 75.1037 368.769 104.84ZC366.979 112.222 367.15 118.222 370.278 121.649 376.436 128.395 386.509 124.447 396.2 116.652M396.2 116.652C411.258 104.539 425.391 83.1395 422.473 78.154 417.954 70.4328 386.091 102.296 396.2 116.652ZC396.818 117.53 397.594 118.344 398.544 119.078 407.166 125.749 434.954 98.3384 458.381 69.9988M458.381 69.9988C464.166 63.0002 469.685 55.9448 474.584 49.3322M458.381 69.9988C461.416 63.3282 464.702 56.6707 468.017 50.4108M458.381 69.9988C448.806 91.0436 441.74 112.219 444.224 121.449" stroke-width="6" stroke-linecap="round"/>
+      <path class="sig-path" d="M474.584 49.3322C487.709 31.6159 496.38 17.0771 493.783 15.3182 490.445 13.0581 479.077 29.52 468.017 50.4108M474.584 49.3322C490.46 46.7955 507.218 44.5996 519.506 43.1747M474.584 49.3322C472.373 49.6855 470.179 50.0454 468.017 50.4108M468.017 50.4108C444.491 54.3857 424.702 59.0054 427.267 62.7734" stroke-width="6" stroke-linecap="round"/>
+      <path class="sig-path" d="M478 98C479 97.3333 480 96.6667 481 96" stroke-width="10" stroke-linecap="round"/>
+      <path class="sig-path" d="M497 86C497.6667 85.6667 498.3333 85.3333 499 85" stroke-width="6" stroke-linecap="round"/>
+    </svg>
+      </a>
+    </div>
+    <div class="nav-right">
+      <div class="nav-icons-row">
+        <a href="https://instagram.com/evan_wallet/" target="_blank" rel="noopener"><svg class="nav-icon"><use href="/assets/icons.svg#instagram"></use></svg></a>
+        <a href="https://www.youtube.com/@EvanWallet" target="_blank" rel="noopener"><svg class="nav-icon"><use href="/assets/icons.svg#youtube"></use></svg></a>
+        <a href="https://www.linkedin.com/in/evan-wallet-280b5837a/" target="_blank" rel="noopener"><svg class="nav-icon"><use href="/assets/icons.svg#linkedin"></use></svg></a>
+      </div>
+      <div class ="nav-links-column">
+      <a href="https://instagram.com/evan_wallet/" target="_blank" rel="noopener" class="nav-link nav-link--right" data-hover="@evan_wallet">INSTAGRAM</a>
+      <a href="https://www.youtube.com/@EvanWallet" target="_blank" rel="noopener" class="nav-link nav-link--right" data-hover="@EvanWallet">YOUTUBE</a>
+      <a href="https://www.linkedin.com/in/evan-wallet-280b5837a/" target="_blank" rel="noopener" class="nav-link nav-link--right" data-hover="Evan Wallet">LINKEDIN</a>
+      </div>
+    </div>
+  </nav>
+  `;
+}

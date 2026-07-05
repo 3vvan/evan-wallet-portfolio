@@ -1,0 +1,186 @@
+/* ═══════════════════════════════════════════════════════
+   INFO.CSS  — about / info page
+   ═══════════════════════════════════════════════════════ */
+
+/* ── PAGE LAYOUT ──────────────────────────────────────── */
+.info-page {
+  min-height: 100vh;
+  padding-top: calc(var(--space-xxl) * 0.8);
+}
+
+.info-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-xl);
+  padding: var(--space-l) 1.8rem;
+  align-items: start;
+}
+
+/* ── LEFT: Photo + name ───────────────────────────────── */
+.info-portrait {
+  position: sticky;
+  top: 5rem;
+}
+
+.info-portrait__img-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--color-surface);
+  margin-bottom: var(--space-s);
+}
+
+.info-portrait__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(15%);
+  transition: filter 0.6s ease;
+}
+
+.info-portrait__img-wrap:hover img {
+  filter: grayscale(0%);
+}
+
+.info-portrait__caption {
+  font-size: var(--size-caption);
+  letter-spacing: 0.1em;
+  color: var(--color-muted);
+  text-transform: uppercase;
+}
+
+/* ── RIGHT: Bio content ───────────────────────────────── */
+.info-content {
+  padding-top: var(--space-s);
+}
+
+.info-eyebrow {
+  font-size: var(--size-caption);
+  letter-spacing: 0.25em;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  margin-bottom: var(--space-m);
+}
+
+.info-name-display {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(3rem, 7vw, 6rem);
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-text);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-l);
+}
+
+.info-bio {
+  font-family: var(--font-ui);
+  font-weight: 300;
+  font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+  line-height: 1.75;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: var(--space-l);
+  max-width: 55ch;
+}
+
+.info-bio p + p {
+  margin-top: var(--space-s);
+}
+
+/* ── Skills / disciplines list ───────────────────────── */
+.info-disciplines {
+  margin-bottom: var(--space-l);
+}
+
+.info-disciplines__label {
+  font-size: var(--size-caption);
+  letter-spacing: 0.2em;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  margin-bottom: var(--space-s);
+  border-bottom: 1px solid var(--color-hairline);
+  padding-bottom: 0.5rem;
+}
+
+.disciplines-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.disciplines-list li {
+  font-family: var(--font-ui);
+  font-weight: 300;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text);
+  text-transform: uppercase;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--color-hairline);
+  display: flex;
+  justify-content: space-between;
+}
+
+.disciplines-list li span {
+  color: var(--color-muted);
+}
+
+/* ── Experience / CV rows ────────────────────────────── */
+.info-experience {
+  margin-bottom: var(--space-l);
+}
+
+.info-experience__label {
+  font-size: var(--size-caption);
+  letter-spacing: 0.2em;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  margin-bottom: var(--space-s);
+  border-bottom: 1px solid var(--color-hairline);
+  padding-bottom: 0.5rem;
+}
+
+.experience-row {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: var(--space-s);
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.experience-row__year {
+  font-size: var(--size-caption);
+  color: var(--color-muted);
+  letter-spacing: 0.08em;
+  padding-top: 0.1rem;
+}
+
+.experience-row__title {
+  font-family: var(--font-ui);
+  font-weight: 300;
+  font-size: 0.84rem;
+  letter-spacing: 0.05em;
+  color: var(--color-text);
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.experience-row__org {
+  font-size: var(--size-caption);
+  color: var(--color-muted);
+  margin-top: 0.1rem;
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  .info-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-l);
+    padding: var(--space-m) 1.2rem;
+  }
+
+  .info-portrait {
+    position: static;
+    max-width: 280px;
+  }
+}

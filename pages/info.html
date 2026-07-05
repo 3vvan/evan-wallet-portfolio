@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Info — Evan Wallet</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/nav.css" />
+  <link rel="stylesheet" href="../css/info.css" />
+</head>
+<body>
+
+  <header id="header"></header>
+
+  <!-- ═══════════════════════════════════════
+       INFO PAGE
+  ═══════════════════════════════════════ -->
+  <main class="info-page">
+    <div class="info-layout">
+
+      <!-- ── LEFT: Portrait ───────────────────────────── -->
+      <div class="info-portrait">
+        <!-- Replace with your actual photo -->
+        <div class="info-portrait__img-wrap">
+          <img
+            src="../assets/images/evan-portrait.jpg"
+            alt="Evan Wallet"
+            loading="eager"
+          />
+        </div>
+        <p class="info-portrait__caption">Evan Wallet — Fort Wayne, IN</p>
+      </div>
+
+      <!-- ── RIGHT: Bio & Details ──────────────────────── -->
+      <div class="info-content">
+
+        <p class="info-eyebrow">About</p>
+
+        <h1 class="info-name-display">EVAN<br>WALLET</h1>
+
+        <!-- ── BIO ──────────────────────────────────────
+             Fill in your own bio below.
+             Keep paragraphs short — 2–3 sentences each.
+        ─────────────────────────────────────────────── -->
+        <div class="info-bio">
+          <p>
+            <!-- ADD YOUR BIO HERE -->
+            [Your bio paragraph one — who you are, what drives your work.]
+          </p>
+          <p>
+            [Your bio paragraph two — your background, education, or aesthetic approach.]
+          </p>
+          <p>
+            [Your bio paragraph three — what you're currently working on or interested in.]
+          </p>
+        </div>
+
+        <!-- ── DISCIPLINES ───────────────────────────── -->
+        <div class="info-disciplines">
+          <p class="info-disciplines__label">Disciplines</p>
+          <ul class="disciplines-list">
+            <li>Graphic Design <span>Brand, Print, Digital</span></li>
+            <li>Photography <span>Concert, Portrait, Editorial</span></li>
+            <li>Art Direction <span>Campaign, Layout</span></li>
+            <!-- Add or remove disciplines as needed -->
+          </ul>
+        </div>
+
+        <!-- ── EXPERIENCE / EDUCATION ────────────────
+             Fill in your actual experience below.
+             Duplicate .experience-row for more entries.
+        ─────────────────────────────────────────── -->
+        <div class="info-experience">
+          <p class="info-experience__label">Experience</p>
+
+          <div class="experience-row">
+            <div class="experience-row__year">20XX – Present</div>
+            <div>
+              <div class="experience-row__title">[Job Title]</div>
+              <div class="experience-row__org">[Company / Studio / Freelance]</div>
+            </div>
+          </div>
+
+          <div class="experience-row">
+            <div class="experience-row__year">20XX – 20XX</div>
+            <div>
+              <div class="experience-row__title">[Job Title]</div>
+              <div class="experience-row__org">[Company / Studio]</div>
+            </div>
+          </div>
+
+          <!-- ADD MORE EXPERIENCE ROWS HERE -->
+        </div>
+
+        <div class="info-experience">
+          <p class="info-experience__label">Education</p>
+
+          <div class="experience-row">
+            <div class="experience-row__year">20XX</div>
+            <div>
+              <div class="experience-row__title">[Degree / Program]</div>
+              <div class="experience-row__org">[School / Institution]</div>
+            </div>
+          </div>
+
+          <!-- ADD MORE EDUCATION ROWS HERE -->
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-left">
+      <span class="footer-copy">© <span id="year"></span> Evan Wallet</span>
+    </div>
+    <div class="footer-center">
+      <a href="../index.html" class="footer-name">EVAN WALLET</a>
+    </div>
+    <div class="footer-right">
+      <a href="https://instagram.com/evan_wallet/" target="_blank" rel="noopener" class="footer-link">INSTAGRAM</a>
+      <a href="https://www.linkedin.com/in/evan-wallet-280b5837a/" target="_blank" rel="noopener" class="footer-link">LINKEDIN</a>
+    </div>
+  </footer>
+
+  <script src="../js/replicator.js"></script>
+  <script src="../js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+/* ═══════════════════════════════════════════════════════
+   BASE.CSS  — tokens, reset, typography, shared utilities
+   ═══════════════════════════════════════════════════════ */
+
+/* ── DESIGN TOKENS ───────────────────────────────────────*/
+:root {
+  /* Palette */
+  --color-bg:          #000000;
+  --color-surface:     #0a0a0a;
+  --color-text:        #ffffff;
+  --color-muted:       #888888;
+  --color-hairline:    #222222;
+
+  /* Typography */
+  --font-display:      'Times New Roman', serif;
+  --font-ui:           'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+
+  /* Type scale */
+  --size-hero:         clamp(4rem, 14vw, 14rem);
+  --size-category:     clamp(3.5rem, 10vw, 9rem);
+  --size-h2:           clamp(1.5rem, 4vw, 3rem);
+  --size-nav:          0.68rem;
+  --size-body:         0.9rem;
+  --size-caption:      0.72rem;
+
+  /* Spacing */
+  --space-xs:          0.5rem;
+  --space-s:           1rem;
+  --space-m:           2rem;
+  --space-l:           4rem;
+  --space-xl:          8rem;
+  --space-xxl:         14rem;
+
+  /* Motion */
+  --ease-out-expo:     cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:       cubic-bezier(0.76, 0, 0.24, 1);
+  --duration-fast:     180ms;
+  --duration-med:      400ms;
+  --duration-slow:     800ms;
+}
+
+/* ── RESET ───────────────────────────────────────────────*/
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  font-weight: 300;
+  font-size: var(--size-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ── SHARED UTILITIES ────────────────────────────────────*/
+
+/* TimesNewRoman outline style (the signature element) */
+.TimesNewRoman-outline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.18);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Category label container */
+.category-label {
+  position: absolute;
+  top: -2.5rem;
+  left: -0.5rem;
+  font-size: var(--size-category);
+  z-index: 1;
+}
+
+.category-label--right {
+  left: auto;
+  right: -0.5rem;
+  text-align: right;
+}
+
+/* Screen-reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Page fade-in */
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.page-enter {
+  animation: pageFadeIn var(--duration-slow) var(--ease-out-expo) both;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

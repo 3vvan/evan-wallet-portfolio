@@ -115,21 +115,48 @@ function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const btn  = form.querySelector('.btn-submit');
     const note = form.querySelector('.form-note');
+    const originalBtnText = btn.textContent;
 
     btn.textContent  = 'SENDING…';
     btn.disabled     = true;
+    if (note) note.textContent = '';
 
-    // Replace this fetch with your actual form endpoint (Formspree, Netlify, etc.)
-    // See CONTRIBUTING.md for setup instructions
-    setTimeout(() => {
-      btn.textContent  = 'SENT ✓';
-      if (note) note.textContent = 'Message received. I\'ll be in touch.';
-    }, 1200);
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        btn.textContent  = 'SENT ✓';
+        if (note) note.textContent = 'Message received. I\'ll be in touch.';
+        form.reset();
+        // Keep button disabled after successful submission as a design choice.
+      } else {
+        // Handle server errors (e.g., validation) from Formspree
+        const data = await response.json();
+        if (data.errors) {
+          note.textContent = data.errors.map(error => error.message).join(', ');
+        } else {
+          note.textContent = 'Oops! There was a problem. Please try again.';
+        }
+        btn.textContent = originalBtnText;
+        btn.disabled = false;
+      }
+    } catch (error) {
+      // Handle network errors
+      if (note) note.textContent = 'Oops! A network error occurred. Please try again.';
+      btn.textContent = originalBtnText;
+      btn.disabled = false;
+    }
   });
 }
 
@@ -261,6 +288,61 @@ function initNavHeight() {
   // We also observe childList to catch when links are hidden/shown
   observer.observe(nav, { childList: true, subtree: true });
 }
+
+
+/* ── LIGHTBOX FUNCTIONALITY FOR WORK ITEMS ───────────── */
+document.addEventListener('DOMContentLoaded', () => {
+    const workItems = document.querySelectorAll('.work-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxClose = document.querySelector('.lightbox__close');
+
+    if (!lightbox || !lightboxImage || !lightboxClose) {
+        console.error('Lightbox elements not found!');
+        return;
+    }
+
+    workItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            // If the work-item is a link, prevent it from navigating
+            e.preventDefault();
+
+            // Find the image inside the clicked work-item
+            const image = item.querySelector('.work-item__img-wrap img');
+            if (image) {
+                // Set the lightbox image source to the clicked image's source
+                lightboxImage.src = image.src;
+
+                // Show the lightbox and prevent body scrolling
+                lightbox.classList.add('visible');
+                document.body.classList.add('lightbox-open');
+            }
+        });
+    });
+
+    // Function to close the lightbox
+    const closeLightbox = () => {
+        lightbox.classList.remove('visible');
+        document.body.classList.remove('lightbox-open');
+    };
+
+    // Close lightbox when the 'X' button is clicked
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    // Close lightbox when clicking on the background overlay
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    // Close lightbox with the Escape key for better accessibility
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('visible')) {
+            closeLightbox();
+        }
+    });
+});
 
 /* ── INIT ─────────────────────────────────────────────── */
 ready(() => {

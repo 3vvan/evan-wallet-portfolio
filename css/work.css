@@ -111,19 +111,22 @@
 }
 
 /* Large featured first item */
+/*
 .work-full-grid .work-item:first-child {
   grid-column: 1 / 3;
 }
 
 .work-full-grid .work-item:first-child .work-item__img-wrap {
   aspect-ratio: 16 / 9;
-}
+} 
+*/
 
 /* ── WORK ITEM (shared with home, extended here) ──────── */
 .work-item {
   display: block;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .work-item__img-wrap {
@@ -187,6 +190,102 @@
 .work-item.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ── FULLSCREEN HINT ─────────────────────────────────── */
+.fullscreen-hint {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: rgba(0, 0, 0, 0.75);
+      color: white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      z-index: 100;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .fullscreen-hint svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+/* ── LIGHTBOX PREVIEW ─────────────────────────────────── */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* For Safari */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s var(--ease-out-expo), visibility 0s linear 0.4s;
+}
+
+.lightbox.visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s var(--ease-out-expo);
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 2rem;
+  right: 2.5rem;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  opacity: 0.8;
+  transition: opacity var(--duration-fast) ease;
+}
+
+.lightbox__close:hover {
+  opacity: 1;
+}
+
+.lightbox__close::before,
+.lightbox__close::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 32px;
+  height: 2px;
+  background-color: white;
+  transform-origin: center;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.lightbox__close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.lightbox__image {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  display: block;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+  border-radius: 4px;
+}
+
+/* Prevent body scroll when lightbox is open */
+body.lightbox-open {
+  overflow: hidden;
 }
 
 /* ── Divider between sections ─────────────────────────── */

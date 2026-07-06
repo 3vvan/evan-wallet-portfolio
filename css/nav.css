@@ -136,20 +136,19 @@
   width: 1rem;
   height: 1rem;
   fill: currentColor;
-  color: var(--color-muted);
-  transition: fill var(--duration-med) ease,
-              opacity var(--duration-med) var(--ease-in-out) !important;
+  color: var(--color-text);
+  transition: opacity var(--duration-fast) ease !important;
   opacity: 0;
 }
 
 .nav-icon:hover,
 .nav-icon:focus-visible {
-  color: var(--color-text);
+  opacity: 1 !important;
 }
 
 .nav-icon.scrolled-down {
   cursor: pointer;
-  opacity: 1;
+  opacity: .5;
 }
 
 /* ── Mobile nav ───────────────────────────────────────── */

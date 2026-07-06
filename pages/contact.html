@@ -14,23 +14,17 @@
 
   <header id="header"></header>
 
-  <!-- ═══════════════════════════════════════
-       CONTACT PAGE
-  ═══════════════════════════════════════ -->
   <main class="contact-page">
 
-    <!-- Big background type -->
     <p class="contact-display" aria-hidden="true">GET IN<br>TOUCH</p>
 
     <div class="contact-layout">
 
-      <!-- ── LEFT: Direct contact info ──────────────── -->
       <div class="contact-info">
         <p class="contact-info__eyebrow">Contact</p>
 
         <div class="contact-info__line">
           <span class="contact-info__label">Email</span>
-          <!-- Replace with your actual email -->
           <a href="mailto:evanwallet06@gmail.com" class="contact-info__value">evanwallet06@gmail.com</a>
         </div>
 
@@ -45,21 +39,16 @@
         </div>
 
         <div class="contact-socials">
-          <!-- Replace href values with your actual social URLs -->
           <a href="https://instagram.com/evan_wallet/" target="_blank" rel="noopener" class="contact-social-link">INSTAGRAM</a>
           <a href="https://www.youtube.com/@EvanWallet" target="_blank" rel="noopener" class="contact-social-link">YOUTUBE</a>
           <a href="https://www.linkedin.com/in/evan-wallet-280b5837a/" target="_blank" rel="noopener" class="contact-social-link">LINKEDIN</a>
         </div>
       </div>
 
-      <!-- ── RIGHT: Contact form ─────────────────────
-           To wire this up, see CONTRIBUTING.md.
-           Recommended: Formspree (free tier) or Netlify Forms.
-      ─────────────────────────────────────────────── -->
       <div class="contact-form-wrap">
         <p class="contact-form__eyebrow">Send a Message</p>
 
-        <form class="contact-form" id="contact-form" novalidate>
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/xpqgbbjq" method="POST">
           <div class="form-field">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Your name" required />
@@ -90,9 +79,6 @@
     </div>
   </main>
 
-  <!-- ═══════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════ -->
   <footer class="site-footer">
     <div class="footer-left">
       <span class="footer-copy">© <span id="year"></span> Evan Wallet</span>
@@ -102,6 +88,7 @@
     </div>
     <div class="footer-right">
       <a href="https://instagram.com/evan_wallet/" target="_blank" rel="noopener" class="footer-link">INSTAGRAM</a>
+      <a href="https://www.youtube.com/@EvanWallet" target="_blank" rel="noopener" class="footer-link">YOUTUBE</a>
       <a href="https://www.linkedin.com/in/evan-wallet-280b5837a/" target="_blank" rel="noopener" class="footer-link">LINKEDIN</a>
     </div>
   </footer>

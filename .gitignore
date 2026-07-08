@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Lock files (keep package-lock.json as it was just added)
+# yarn.lock
+# pnpm-lock.yaml
+# bun.lockb
+
+# Build outputs
+dist/
+build/
+.next/
+.turbo/
+out/
+
+# Cache directories
+.vercel/
+.cache/
+.parcel-cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

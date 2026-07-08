@@ -1,24 +1,21 @@
 {
-  "scripts": {
-    "dev": "next dev"
-  },
   "name": "evan-wallet-portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "Evan Wallet's portfolio website - Graphic Design, Photography, Videography",
   "main": "index.js",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "serve": "python3 -m http.server 8000"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/3vvan/evan-wallet-portfolio.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["portfolio", "photography", "graphic-design", "videography"],
+  "author": "Evan Wallet",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/3vvan/evan-wallet-portfolio/issues"
   },
-  "homepage": "https://github.com/3vvan/evan-wallet-portfolio#readme",
-  "dependencies": {
-    "@vercel/analytics": "^2.0.1"
-  }
+  "homepage": "https://github.com/3vvan/evan-wallet-portfolio#readme"
 }
